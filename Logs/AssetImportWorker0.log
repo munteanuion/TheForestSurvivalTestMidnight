@@ -802,3 +802,63 @@ Received Import Request.
   path: Assets/Prefabs/Vegetation/Tree 1.prefab
   artifactKey: Guid(06573cc19fb2e4a479092a9b4687b26c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Prefabs/Vegetation/Tree 1.prefab using Guid(06573cc19fb2e4a479092a9b4687b26c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51701e092e4dbbb0fb0a79c96f4e310f') in 0.022596 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 691.973995 seconds.
+  path: Assets/Low Poly Weapons VOL.1
+  artifactKey: Guid(06b06030f7006eb4ba076021abd54da7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Weapons VOL.1 using Guid(06b06030f7006eb4ba076021abd54da7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3beeb10832a642225f7a45ad23bb4cbd') in 0.011731 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.309310 seconds.
+  path: Assets/Low Poly Weapons VOL.1/Models
+  artifactKey: Guid(c2ea3f448776c9645ba9ffd49106fa9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Weapons VOL.1/Models using Guid(c2ea3f448776c9645ba9ffd49106fa9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '111f45647244fdde4ebec711a1449b8d') in 0.010660 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 28.633806 seconds.
+  path: Assets/Low Poly Weapons VOL.1/Prefabs
+  artifactKey: Guid(4b1dba3d474fa064b9375a0fabfa491f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Weapons VOL.1/Prefabs using Guid(4b1dba3d474fa064b9375a0fabfa491f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97b023e5da05e5850d7f33c08fa9da12') in 0.002886 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 13.497163 seconds.
+  path: Assets/Low Poly Weapons VOL.1/Guns
+  artifactKey: Guid(4b1dba3d474fa064b9375a0fabfa491f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Weapons VOL.1/Guns using Guid(4b1dba3d474fa064b9375a0fabfa491f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd9e23ad11a5004a97017067d886f3d7') in 0.010338 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.015666 seconds.
+  path: Assets/Low Poly Weapons VOL.1/Models/AK74.fbx
+  artifactKey: Guid(6f966b9a7c817ed49973b4a8762cbbdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Weapons VOL.1/Models/AK74.fbx using Guid(6f966b9a7c817ed49973b4a8762cbbdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24c509e6a1c656a9bb1678c3a8d3f15c') in 0.079347 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.276603 seconds.
+  path: Assets/Low Poly Weapons VOL.1/Guns
+  artifactKey: Guid(c2ea3f448776c9645ba9ffd49106fa9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Weapons VOL.1/Guns using Guid(c2ea3f448776c9645ba9ffd49106fa9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f98187b7fb0bcde6eee3c26397d031ec') in 0.002746 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 35.466611 seconds.
+  path: Assets/MeshesModels
+  artifactKey: Guid(490be5dcc52958e43ab65270561df11d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MeshesModels using Guid(490be5dcc52958e43ab65270561df11d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e244299162cec36a8223cd6016679226') in 0.014208 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.214322 seconds.
+  path: Assets/MeshesModels/Plants
+  artifactKey: Guid(64ae768b0947bff43bd0ec88c15b3feb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MeshesModels/Plants using Guid(64ae768b0947bff43bd0ec88c15b3feb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1dfa7462408c3e3bdb9bbc394bec66b9') in 0.010090 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.013429 seconds.
+  path: Assets/MeshesModels/Vegetation
+  artifactKey: Guid(64ae768b0947bff43bd0ec88c15b3feb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MeshesModels/Vegetation using Guid(64ae768b0947bff43bd0ec88c15b3feb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '847ad916e7389867ef64d594b6109473') in 0.005196 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.624236 seconds.
+  path: Assets/Low Poly Weapons VOL.1/Sample_Scene.unity
+  artifactKey: Guid(f717f15f191a08741986e6e8efa197ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Weapons VOL.1/Sample_Scene.unity using Guid(f717f15f191a08741986e6e8efa197ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecde8379a513fdce1efa176f5ebaea32') in 0.010875 seconds 
