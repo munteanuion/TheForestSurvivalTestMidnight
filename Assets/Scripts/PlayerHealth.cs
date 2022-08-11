@@ -5,6 +5,7 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private int _maxHp = 100;
 
+    private const string HANDSPIDER_NAME_TAG = "HandSpider";
     //private Animator _playerAnimator;
     private int _hp;
     public event Action<float> HealthChanged;
@@ -14,14 +15,15 @@ public class PlayerHealth : MonoBehaviour
         _hp = _maxHp;
         //_playerAnimator = GetComponent<Animator>();
     }
-
+    
     private void OnTriggerEnter(Collider collider)
     {
         switch (collider.gameObject.tag)
         {
-            case "HandZombie":
+            case HANDSPIDER_NAME_TAG:
                 if(collider.gameObject.GetComponent<ParameterEnemyStats>().IsPlayAttackAnimation())
                     ChangeHealth(-collider.gameObject.GetComponent<ParameterEnemyStats>().GetEnemyStats().GetEnemyDamage());
+                Debug.Log("yes");
                 break;
             default:
                 break;
