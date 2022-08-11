@@ -5,7 +5,7 @@ OcclusionCullingSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_OcclusionBakeSettings:
-    smallestOccluder: 5
+    smallestOccluder: 1
     smallestHole: 0.25
     backfaceThreshold: 5
   m_SceneGUID: 25051b5d14cb13b4b969478a6477e2e5
@@ -216,6 +216,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &229935232
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 620504717}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 34b2bc80a907a704c9371178620f39c3, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 34b2bc80a907a704c9371178620f39c3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 34b2bc80a907a704c9371178620f39c3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 34b2bc80a907a704c9371178620f39c3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 34b2bc80a907a704c9371178620f39c3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 34b2bc80a907a704c9371178620f39c3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 34b2bc80a907a704c9371178620f39c3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 34b2bc80a907a704c9371178620f39c3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 34b2bc80a907a704c9371178620f39c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 34b2bc80a907a704c9371178620f39c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 21.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 34b2bc80a907a704c9371178620f39c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 34b2bc80a907a704c9371178620f39c3, type: 3}
+      propertyPath: m_Name
+      value: Paladin (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 34b2bc80a907a704c9371178620f39c3, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9fc278a358d26a3448d41714495980d9, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 34b2bc80a907a704c9371178620f39c3, type: 3}
+      propertyPath: m_UpdateMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 34b2bc80a907a704c9371178620f39c3, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 34b2bc80a907a704c9371178620f39c3, type: 3}
 --- !u!1 &393218208
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,12 +296,12 @@ GameObject:
   - component: {fileID: 393218209}
   - component: {fileID: 393218210}
   m_Layer: 0
-  m_Name: Paladin_J_Nordstrom (1)
+  m_Name: Paladin_Nordstrom_Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &393218209
 Transform:
   m_ObjectHideFlags: 0
@@ -245,7 +314,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 620504717}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &393218210
 SkinnedMeshRenderer:
@@ -365,6 +434,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &579968938 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 34b2bc80a907a704c9371178620f39c3, type: 3}
+  m_PrefabInstance: {fileID: 229935232}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &579968939 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 34b2bc80a907a704c9371178620f39c3, type: 3}
+  m_PrefabInstance: {fileID: 229935232}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &620504715
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,7 +472,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 620504715}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 9000000, guid: 34b2bc80a907a704c9371178620f39c3, type: 3}
   m_Controller: {fileID: 9100000, guid: 9fc278a358d26a3448d41714495980d9, type: 2}
   m_CullingMode: 1
@@ -411,10 +490,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 620504715}
-  m_LocalRotation: {x: 0, y: 0.041701242, z: 0, w: 0.99913013}
+  m_LocalRotation: {x: 0, y: 0.18309344, z: 0, w: 0.9830956}
   m_LocalPosition: {x: 45.708, y: 0.791, z: 50.428}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 579968938}
   - {fileID: 1241121195}
   - {fileID: 393218209}
   - {fileID: 1061628031}
@@ -422,7 +502,7 @@ Transform:
   - {fileID: 2086527640}
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 4.78, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 21.1, z: 0}
 --- !u!136 &620504718
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -465,8 +545,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d62cb2e3664f541b20db6a9c9875c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  _playerModel: {fileID: 2086527640}
+  speed: 1.5
+  _playerModel: {fileID: 579968938}
+  _animator: {fileID: 579968939}
 --- !u!850595691 &717770177
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -608,8 +689,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 840806668}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 45.708, y: 2.246, z: 45.928}
+  m_LocalRotation: {x: 0, y: 0.14193787, z: 0, w: 0.98987556}
+  m_LocalPosition: {x: 44.443493, y: 2.246, z: 46.109318}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -739,7 +820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cameraTarget: {fileID: 1241121195}
-  _playerModel: {fileID: 2086527640}
+  _playerModel: {fileID: 579968938}
   _minimumAngle: 75
   _maximumAngle: 350
   _mouseSensitivity: 0.8
@@ -755,12 +836,12 @@ GameObject:
   - component: {fileID: 1061628031}
   - component: {fileID: 1061628032}
   m_Layer: 0
-  m_Name: Paladin_J_Nordstrom_Helmet (1)
+  m_Name: Paladin_Nordstrom_Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1061628031
 Transform:
   m_ObjectHideFlags: 0
@@ -773,7 +854,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 620504717}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &1061628032
 SkinnedMeshRenderer:
@@ -855,7 +936,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 620504717}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1611403587
 GameObject:
@@ -944,12 +1025,12 @@ GameObject:
   - component: {fileID: 1622451740}
   - component: {fileID: 1622451741}
   m_Layer: 0
-  m_Name: Paladin_J_Nordstrom_Shield (1)
+  m_Name: Paladin_Nordstrom_Helmet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1622451740
 Transform:
   m_ObjectHideFlags: 0
@@ -962,7 +1043,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 620504717}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &1622451741
 SkinnedMeshRenderer:
@@ -1076,7 +1157,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1810616113}
   m_LocalRotation: {x: -0.16666308, y: -0.22361034, z: 0.038545888, w: -0.9595499}
-  m_LocalPosition: {x: 45.708, y: 2.246, z: 45.928}
+  m_LocalPosition: {x: 44.443493, y: 2.246, z: 46.109318}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 551629864}
@@ -1094,12 +1175,12 @@ GameObject:
   - component: {fileID: 2086527640}
   - component: {fileID: 2086527641}
   m_Layer: 0
-  m_Name: Paladin_J_Nordstrom_Sword (1)
+  m_Name: Paladin_Nordstrom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2086527640
 Transform:
   m_ObjectHideFlags: 0
@@ -1112,7 +1193,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 620504717}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &2086527641
 SkinnedMeshRenderer:

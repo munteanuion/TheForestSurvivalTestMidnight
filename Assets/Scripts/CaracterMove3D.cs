@@ -4,16 +4,15 @@ public class CaracterMove3D : MonoBehaviour
 {
     [SerializeField] private float speed = 3f;
     [SerializeField] private Transform _playerModel; 
+    [SerializeField] private Animator _animator;
 
     private Transform _mainCamera;
     private Rigidbody _rigidbody;
-    private Animator _animator; 
    
     void Start()
     {
         _mainCamera = Camera.main.transform;
         _rigidbody = GetComponent<Rigidbody>();
-        _animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -29,6 +28,7 @@ public class CaracterMove3D : MonoBehaviour
         camRight.y = 0f;
 
         Vector3 movingVector = horizontal * camRight.normalized + vertical * camForward.normalized;
+
         if (!_mainCamera.GetComponent<CameraMoveTarget>().HasStickCamera()) 
         {
             if (movingVector.magnitude >= 0.2f)
