@@ -2,16 +2,15 @@ using UnityEngine;
 
 public class CaracterMove3D : MonoBehaviour
 {
-    [SerializeField] private float speed = 3f;
+    [SerializeField] private float _speed = 10f;
     [SerializeField] private Transform _playerModel; 
     [SerializeField] private Animator _animator;
-
-    private Transform _mainCamera;
+    [SerializeField] private Transform _mainCamera;
+    
     private Rigidbody _rigidbody;
    
     void Start()
     {
-        _mainCamera = Camera.main.transform;
         _rigidbody = GetComponent<Rigidbody>();
     }
 
@@ -37,6 +36,10 @@ public class CaracterMove3D : MonoBehaviour
             }
         }
 
-        _rigidbody.velocity = movingVector * speed;
+        //_rigidbody.velocity = movingVector * _speed;
+        _rigidbody.MovePosition(transform.position + movingVector * _speed * Time.fixedDeltaTime);
+
+        if (_rigidbody.velocity.magnitude > _speed)
+            _rigidbody.velocity = _rigidbody.velocity.normalized * _speed;
     }
 }
