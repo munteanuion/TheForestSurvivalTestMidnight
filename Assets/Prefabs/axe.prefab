@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4485619516091057808}
   - component: {fileID: 4485619516091057807}
   - component: {fileID: 5317213000749285757}
+  - component: {fileID: 8956216347912884164}
   m_Layer: 0
   m_Name: axe
   m_TagString: Untagged
@@ -31,6 +32,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -54,6 +56,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -63,7 +66,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 3184a7f77f4b37649a71f8a71dcffa12, type: 2}
-  - {fileID: 2100000, guid: fa6668f31c28422448789850cd2a71fc, type: 2}
+  - {fileID: 2100000, guid: 921663dfebf9c824f8503f6b137800de, type: 2}
   - {fileID: 2100000, guid: 503c6f670c203db48a23fe90bda5f7d8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -128,3 +131,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8956216347912884164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778427119070980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f5a6ccec1990034ab5e654febbab191, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -6,12 +6,9 @@ public class PlayerHealthBar : MonoBehaviour
     [SerializeField] private Image _healthBarFilling;
     [SerializeField] private PlayerHealth _playerHealth;
 
-    private Camera _camera;
-
     private void Awake()
     {
         _playerHealth.HealthChanged += OnHealthChanged;
-        _camera = Camera.main;
     }
 
     private void OnDestroy()

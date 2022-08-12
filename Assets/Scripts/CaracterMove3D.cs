@@ -35,8 +35,7 @@ public class CaracterMove3D : MonoBehaviour
                 _playerModel.rotation = Quaternion.LookRotation(camForward, Vector3.up);
             }
         }
-
-        //_rigidbody.velocity = movingVector * _speed;
+        
         _rigidbody.MovePosition(transform.position + movingVector * _speed * Time.fixedDeltaTime);
 
         if (_rigidbody.velocity.magnitude > _speed)

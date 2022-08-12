@@ -6,7 +6,6 @@ public class EnemyStats : MonoBehaviour
     [SerializeField] private float _hp = 10;
     [SerializeField] private float _damage = 10;
     [SerializeField] private float _speed = 10;
-    [SerializeField] private GameObject _prefabGenerateAfterDeath;
 
     private const string DEATH_NAME_ANIMATOR = "Death", WEAPON_NAME_TAG = "Weapon";
 
@@ -44,17 +43,12 @@ public class EnemyStats : MonoBehaviour
     {
         if(_hp <= 0 && !transform.GetComponent<Animator>().GetBool(DEATH_NAME_ANIMATOR))
         {
-            //PrefabGenerateAfterDeath();
             transform.GetComponent<Animator>().SetBool(DEATH_NAME_ANIMATOR, true);
-            transform.GetComponent<CapsuleCollider>().enabled = false;
+            transform.GetComponent<CapsuleCollider>().isTrigger = true;
+            transform.GetComponent<Rigidbody>().isKinematic = true;
             transform.gameObject.GetComponent<NavMeshAgent>().speed = 0;
-            Invoke("DestroyEnemy", 1.8f);
+            Invoke("DestroyEnemy", 2f);
         }
-    }
-
-    public void PrefabGenerateAfterDeath()
-    {
-        Instantiate(_prefabGenerateAfterDeath, transform.position, Quaternion.identity);
     }
 
     public void DestroyEnemy()

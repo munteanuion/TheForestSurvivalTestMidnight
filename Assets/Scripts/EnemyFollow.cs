@@ -77,9 +77,4 @@ public class EnemyFollow : MonoBehaviour
     {
         _navMeshAgent.SetDestination(_targetFollow.position);
     }
-
-    public void SetTargetFollow(Transform targetFollow)
-    {
-        this._targetFollow = targetFollow;
-    }
 }
