@@ -61,6 +61,9 @@
     <Compile Include="Assets\Scripts\ParameterEnemyStats.cs" />
     <Compile Include="Assets\Scripts\WeaponStats.cs" />
     <Compile Include="Assets\Scripts\CameraMoveTarget.cs" />
+    <Compile Include="Assets\Scripts\PickUpObject.cs" />
+    <Compile Include="Assets\Scripts\PlayerPickUpObject.cs" />
+    <Compile Include="Assets\Scripts\PlayerAttack.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -6,6 +6,7 @@ public class EnemyStats : MonoBehaviour
     [SerializeField] private float _hp = 10;
     [SerializeField] private float _damage = 10;
     [SerializeField] private float _speed = 10;
+    [SerializeField] private Animator _animator;
 
     private const string DEATH_NAME_ANIMATOR = "Death", WEAPON_NAME_TAG = "Weapon";
 
@@ -41,9 +42,9 @@ public class EnemyStats : MonoBehaviour
 
     public void CheckEnemyHP()
     {
-        if(_hp <= 0 && !transform.GetComponent<Animator>().GetBool(DEATH_NAME_ANIMATOR))
+        if(_hp <= 0 && !_animator.GetBool(DEATH_NAME_ANIMATOR))
         {
-            transform.GetComponent<Animator>().SetBool(DEATH_NAME_ANIMATOR, true);
+            _animator.SetBool(DEATH_NAME_ANIMATOR, true);
             transform.GetComponent<CapsuleCollider>().isTrigger = true;
             transform.GetComponent<Rigidbody>().isKinematic = true;
             transform.gameObject.GetComponent<NavMeshAgent>().speed = 0;

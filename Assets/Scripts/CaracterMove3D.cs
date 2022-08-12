@@ -8,18 +8,29 @@ public class CaracterMove3D : MonoBehaviour
     [SerializeField] private Transform _mainCamera;
     
     private Rigidbody _rigidbody;
+    private PlayerHealth _playerHealth;
    
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _playerHealth = GetComponent<PlayerHealth>();
     }
 
     void FixedUpdate()
     {
+        if (_playerHealth.GetHealth() > 0)
+        {
+            MoveRotatePlayer();
+        }
+        
+    }
+
+    private void MoveRotatePlayer()
+    {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
-        _animator.SetFloat("HorizontalSpeed", horizontal); 
-        _animator.SetFloat("VerticalSpeed", vertical); 
+        _animator.SetFloat("HorizontalSpeed", horizontal);
+        _animator.SetFloat("VerticalSpeed", vertical);
 
         Vector3 camForward = _mainCamera.forward;
         Vector3 camRight = _mainCamera.right;
@@ -28,14 +39,14 @@ public class CaracterMove3D : MonoBehaviour
 
         Vector3 movingVector = horizontal * camRight.normalized + vertical * camForward.normalized;
 
-        if (!_mainCamera.GetComponent<CameraMoveTarget>().HasStickCamera()) 
+        if (!_mainCamera.GetComponent<CameraMoveTarget>().HasStickCamera())
         {
             if (movingVector.magnitude >= 0.2f)
             {
                 _playerModel.rotation = Quaternion.LookRotation(camForward, Vector3.up);
             }
         }
-        
+
         _rigidbody.MovePosition(transform.position + movingVector * _speed * Time.fixedDeltaTime);
 
         if (_rigidbody.velocity.magnitude > _speed)

@@ -47,4 +47,9 @@ public class PlayerHealth : MonoBehaviour
         this.gameObject.GetComponent<CapsuleCollider>().isTrigger = true;
         this.gameObject.GetComponent<Rigidbody>().isKinematic = true;
     }
+
+    public int GetHealth()
+    {
+        return _hp;
+    }
 }
