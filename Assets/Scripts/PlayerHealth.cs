@@ -4,15 +4,16 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private int _maxHp = 100;
-    [SerializeField] private Animator _playerAnimator;
 
-    private const string HANDSPIDER_NAME_TAG = "HandSpider", DEATH_NAME_ANIMATOR = "Death";
+    private Animator _playerAnimator;
+    private const string HANDSPIDER_NAME_TAG = "HandSpider", DEATH_PARAMETER_ANIMATOR = "Death", BLOCK_NAME_ANIMATOR = "Block";
     private int _hp;
     public event Action<float> HealthChanged;
 
     private void Awake()
     {
         _hp = _maxHp;
+        _playerAnimator = GetComponent<Animator>();
     }
     
     private void OnTriggerEnter(Collider collider)
@@ -20,7 +21,8 @@ public class PlayerHealth : MonoBehaviour
         switch (collider.gameObject.tag)
         {
             case HANDSPIDER_NAME_TAG:
-                if(collider.gameObject.GetComponent<ParameterEnemyStats>().IsPlayAttackAnimation())
+                if(collider.gameObject.GetComponent<ParameterEnemyStats>().IsPlayAttackAnimation() &&
+                    !_playerAnimator.GetCurrentAnimatorStateInfo(0).IsName(BLOCK_NAME_ANIMATOR))
                     ChangeHealth(-collider.gameObject.GetComponent<ParameterEnemyStats>().GetEnemyStats().GetEnemyDamage());
                 break;
             default:
@@ -43,8 +45,8 @@ public class PlayerHealth : MonoBehaviour
     private void Death()
     {
         HealthChanged?.Invoke(0);
-        _playerAnimator.SetTrigger(DEATH_NAME_ANIMATOR);
-        this.gameObject.GetComponent<CapsuleCollider>().isTrigger = true;
+        _playerAnimator.SetTrigger(DEATH_PARAMETER_ANIMATOR);
+        this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
         this.gameObject.GetComponent<Rigidbody>().isKinematic = true;
     }
 

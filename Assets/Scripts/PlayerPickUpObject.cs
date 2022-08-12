@@ -13,7 +13,6 @@ public class PlayerPickUpObject : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.DrawRay(_cameraTransform.position, _cameraTransform.forward, Color.green);
         if (Physics.Raycast(_cameraTransform.position, _cameraTransform.forward, out _hit, _distanceRaycast, _layerMask))
         {
             if(_hit.collider.tag == WEAPON_NAME_TAG)

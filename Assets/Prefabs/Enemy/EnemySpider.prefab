@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _viewDistance: 20
-  _targetFollow: {fileID: 0}
+  _targetFollow: {fileID: 8525048019574504404, guid: 41f171e635c3f62498318a27aa579e20, type: 3}
   _colliderHandForAttack: {fileID: 2426590338207329000}
   _animator: {fileID: 2426590336823779683}
 --- !u!95 &2426590336823779683

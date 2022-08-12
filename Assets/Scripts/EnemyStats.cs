@@ -8,16 +8,18 @@ public class EnemyStats : MonoBehaviour
     [SerializeField] private float _speed = 10;
     [SerializeField] private Animator _animator;
 
-    private const string DEATH_NAME_ANIMATOR = "Death", WEAPON_NAME_TAG = "Weapon";
-
-
+    private const string DEATH_PARAMETER_ANIMATOR = "Death", WEAPON_NAME_TAG = "Weapon";
+    
     private void OnTriggerEnter(Collider collider)
     {
         switch (collider.gameObject.tag)
         {
             case WEAPON_NAME_TAG:
-                TakeDamage(collider.gameObject.GetComponent<WeaponStats>().GetDamage());
-                Destroy(collider.gameObject);
+                if (collider.gameObject.GetComponent<Rigidbody>().isKinematic)
+                {
+                    TakeDamage(collider.gameObject.GetComponent<WeaponStats>().GetDamage());
+                    collider.gameObject.GetComponent<MeshCollider>().enabled = false;
+                }
                 break;
             default:
                 break;
@@ -42,10 +44,10 @@ public class EnemyStats : MonoBehaviour
 
     public void CheckEnemyHP()
     {
-        if(_hp <= 0 && !_animator.GetBool(DEATH_NAME_ANIMATOR))
+        if(_hp <= 0 && !_animator.GetBool(DEATH_PARAMETER_ANIMATOR))
         {
-            _animator.SetBool(DEATH_NAME_ANIMATOR, true);
-            transform.GetComponent<CapsuleCollider>().isTrigger = true;
+            _animator.SetTrigger(DEATH_PARAMETER_ANIMATOR);
+            transform.GetComponent<CapsuleCollider>().enabled = false;
             transform.GetComponent<Rigidbody>().isKinematic = true;
             transform.gameObject.GetComponent<NavMeshAgent>().speed = 0;
             Invoke("DestroyEnemy", 2f);

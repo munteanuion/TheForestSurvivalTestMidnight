@@ -4,25 +4,30 @@ public class CaracterMove3D : MonoBehaviour
 {
     [SerializeField] private float _speed = 10f;
     [SerializeField] private Transform _playerModel; 
-    [SerializeField] private Animator _animator;
     [SerializeField] private Transform _mainCamera;
     
+    private Animator _animator;
     private Rigidbody _rigidbody;
     private PlayerHealth _playerHealth;
-   
-    void Start()
+    private const string ATTACK1_NAME_ANIMATOR = "AttackTwoHand", BLOCK_NAME_ANIMATOR = "Block";
+
+    private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
         _playerHealth = GetComponent<PlayerHealth>();
+        _animator = GetComponent<Animator>();
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        if (_playerHealth.GetHealth() > 0)
+        if (
+            _playerHealth.GetHealth() > 0 && 
+            !_animator.GetCurrentAnimatorStateInfo(0).IsName(ATTACK1_NAME_ANIMATOR) &&
+            !_animator.GetCurrentAnimatorStateInfo(0).IsName(BLOCK_NAME_ANIMATOR)
+            )
         {
             MoveRotatePlayer();
         }
-        
     }
 
     private void MoveRotatePlayer()
@@ -39,13 +44,8 @@ public class CaracterMove3D : MonoBehaviour
 
         Vector3 movingVector = horizontal * camRight.normalized + vertical * camForward.normalized;
 
-        if (!_mainCamera.GetComponent<CameraMoveTarget>().HasStickCamera())
-        {
-            if (movingVector.magnitude >= 0.2f)
-            {
-                _playerModel.rotation = Quaternion.LookRotation(camForward, Vector3.up);
-            }
-        }
+        if (!_mainCamera.GetComponent<CameraMoveTarget>().HasStickCamera() && movingVector.magnitude >= 0.2f)
+            _playerModel.rotation = Quaternion.LookRotation(camForward, Vector3.up);
 
         _rigidbody.MovePosition(transform.position + movingVector * _speed * Time.fixedDeltaTime);
 
