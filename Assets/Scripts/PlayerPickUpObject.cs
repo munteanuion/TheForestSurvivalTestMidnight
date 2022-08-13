@@ -1,11 +1,10 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerPickUpObject : MonoBehaviour
 {
     [SerializeField] private float _distanceRaycast = 4f;
     [SerializeField] private LayerMask _layerMask;
-    [SerializeField] private Text _textE;
+    [SerializeField] private GameObject _textE;
     [SerializeField] private Transform _cameraTransform;
 
     private const string WEAPON_NAME_TAG = "Weapon";
@@ -13,22 +12,22 @@ public class PlayerPickUpObject : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (_textE.activeSelf)
+        {
+            _textE.SetActive(false);
+        }
+
         if (Physics.Raycast(_cameraTransform.position, _cameraTransform.forward, out _hit, _distanceRaycast, _layerMask))
         {
             if(_hit.collider.tag == WEAPON_NAME_TAG)
             {
-                _textE.enabled = true;
-            }
-            else if(_textE.enabled == true)
-            {
-                //_textE.enabled = false;
+                _textE.SetActive(true);
             }
             
             if (Input.GetKeyDown(KeyCode.E))
             {
                 _hit.collider.GetComponent<PickUpObject>().PickUp();
-            }
-                
+            } 
         }
     }
 }

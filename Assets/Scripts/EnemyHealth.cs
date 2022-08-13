@@ -1,12 +1,13 @@
 using System;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class PlayerHealth : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] private int _maxHp = 100;
+    [SerializeField] private int _maxHp = 50;
 
     private Animator _playerAnimator;
-    private const string HANDSPIDER_NAME_TAG = "HandSpider", DEATH_PARAMETER_ANIMATOR = "Death", BLOCK_NAME_ANIMATOR = "Block";
+    private const string WEAPON_NAME_TAG = "Weapon", DEATH_PARAMETER_ANIMATOR = "Death";
     private int _hp;
     public event Action<float> HealthChanged;
 
@@ -20,10 +21,10 @@ public class PlayerHealth : MonoBehaviour
     {
         switch (collider.gameObject.tag)
         {
-            case HANDSPIDER_NAME_TAG:
-                if(collider.gameObject.GetComponent<ParameterEnemyStats>().IsPlayAttackAnimation() &&
-                    !_playerAnimator.GetCurrentAnimatorStateInfo(0).IsName(BLOCK_NAME_ANIMATOR))
-                    ChangeHealth(-collider.gameObject.GetComponent<ParameterEnemyStats>().GetEnemyStats().GetEnemyDamage());
+            case WEAPON_NAME_TAG:
+                ChangeHealth(-collider.gameObject.GetComponent<WeaponStats>().GetDamage());
+                collider.gameObject.GetComponent<MeshCollider>().enabled = false;
+                    
                 break;
             default:
                 break;
@@ -48,10 +49,17 @@ public class PlayerHealth : MonoBehaviour
         _playerAnimator.SetTrigger(DEATH_PARAMETER_ANIMATOR);
         this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
         this.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        transform.gameObject.GetComponent<NavMeshAgent>().speed = 0;
+        Invoke("DestroyEnemy", 2f);
     }
 
     public int GetHealth()
     {
         return _hp;
+    }
+
+    public void DestroyEnemy()
+    {
+        Destroy(this.gameObject);
     }
 }
