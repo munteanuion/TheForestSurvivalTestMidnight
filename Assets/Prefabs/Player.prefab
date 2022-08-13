@@ -23,14 +23,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 300068175}
-  m_LocalRotation: {x: -0.7468263, y: 0.5500556, z: 0.1783901, w: -0.32843006}
+  m_LocalRotation: {x: 0.016664183, y: 0.28788182, z: 0.58197665, w: 0.76036143}
   m_LocalPosition: {x: -0.000745, y: 0.000279, z: 0.000252}
   m_LocalScale: {x: 0.007499999, y: 0.0075000017, z: 0.0074999975}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8521295422850367255}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 17.116, y: -138.94, z: 259.19598}
+  m_LocalEulerAnglesHint: {x: 341.956, y: 28.74, z: 430.202}
 --- !u!1 &8525048019574504403
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,6 +147,7 @@ MonoBehaviour:
     m_Bits: 128
   _textE: {fileID: 0}
   _cameraTransform: {fileID: 8525048020159875538}
+  _arm: {fileID: 0}
 --- !u!114 &1551409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7607179307641b4492ff9036da4ef2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _meshColliderWeapon: {fileID: 0}
+  _targetHand: {fileID: 300068175}
 --- !u!95 &1551410
 Animator:
   serializedVersion: 4

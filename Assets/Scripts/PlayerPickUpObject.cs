@@ -6,6 +6,7 @@ public class PlayerPickUpObject : MonoBehaviour
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private GameObject _textE;
     [SerializeField] private Transform _cameraTransform;
+    [SerializeField] private Transform _arm;
 
     private const string WEAPON_NAME_TAG = "Weapon";
     private RaycastHit _hit;
@@ -28,6 +29,11 @@ public class PlayerPickUpObject : MonoBehaviour
             {
                 _hit.collider.GetComponent<PickUpObject>().PickUp();
             } 
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            _arm.gameObject.GetComponentInChildren<PickUpObject>().DropDownObject();
         }
     }
 }

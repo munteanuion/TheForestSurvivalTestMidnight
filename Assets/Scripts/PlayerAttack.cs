@@ -6,6 +6,7 @@ public class PlayerAttack : MonoBehaviour
 
     private Animator _animator;
     private const string ATTACK1_NAME_ANIMATOR = "AttackTwoHand", ATTACK1_PARAMETER_ANIMATOR = "AttackTwoHand";
+    private const string ATTACK2_NAME_ANIMATOR = "AttackOneHand", ATTACK2_PARAMETER_ANIMATOR = "AttackOneHand";
     private const string BLOCK_NAME_ANIMATOR = "Block", BLOCK_PARAMETER_ANIMATOR = "Block";
 
     private void Awake()
@@ -21,8 +22,13 @@ public class PlayerAttack : MonoBehaviour
             _targetHand.transform.childCount != 0
             )
         {
-            _animator.SetTrigger(ATTACK1_PARAMETER_ANIMATOR);
-            _targetHand.gameObject.GetComponentInChildren<MeshCollider>().enabled = true;
+            if (_targetHand.gameObject.GetComponentInChildren<WeaponStats>().HasTwoHandWeapon())
+            {
+                _animator.SetTrigger(ATTACK1_PARAMETER_ANIMATOR);
+            }else{
+                _animator.SetTrigger(ATTACK2_PARAMETER_ANIMATOR);
+            }
+            _targetHand.gameObject.GetComponentInChildren<BoxCollider>().enabled = true;
             Invoke("DisableColliderWeapon", 2);
         }
         else if (
@@ -43,6 +49,6 @@ public class PlayerAttack : MonoBehaviour
 
     private void DisableColliderWeapon()
     {
-        _targetHand.gameObject.GetComponentInChildren<MeshCollider>().enabled = false;
+        _targetHand.gameObject.GetComponentInChildren<BoxCollider>().enabled = false;
     }
 }

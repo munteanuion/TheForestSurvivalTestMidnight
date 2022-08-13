@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\PickUpObject.cs" />
     <Compile Include="Assets\Scripts\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\EnemyHealthBar.cs" />
+    <Compile Include="Assets\Scripts\PowerUpStats.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -23,7 +23,7 @@ public class EnemyHealth : MonoBehaviour
         {
             case WEAPON_NAME_TAG:
                 ChangeHealth(-collider.gameObject.GetComponent<WeaponStats>().GetDamage());
-                collider.gameObject.GetComponent<MeshCollider>().enabled = false;
+                collider.gameObject.GetComponent<BoxCollider>().enabled = false;
                     
                 break;
             default:

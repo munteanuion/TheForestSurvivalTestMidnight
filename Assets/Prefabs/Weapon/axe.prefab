@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5317213000749285757}
   - component: {fileID: 8956216347912884164}
   - component: {fileID: 118001461}
-  - component: {fileID: 118001462}
+  - component: {fileID: 4485619516091057807}
   m_Layer: 7
   m_Name: axe
   m_TagString: Weapon
@@ -117,6 +117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f5a6ccec1990034ab5e654febbab191, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damage: 12
+  _twoHandWeapon: 1
 --- !u!114 &118001461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,8 +132,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _arm: {fileID: 0}
---- !u!64 &118001462
-MeshCollider:
+--- !u!65 &4485619516091057807
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -140,7 +142,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300002, guid: e53c0edb812c5344698949e4671d1a2c, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.63448143, y: 0.7230209, z: 0.10714403}
+  m_Center: {x: -0.061932564, y: -0.8137454, z: 0}
