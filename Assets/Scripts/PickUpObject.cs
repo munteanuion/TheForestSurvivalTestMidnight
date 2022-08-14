@@ -29,13 +29,10 @@ public class PickUpObject : MonoBehaviour
 
     public void DropDownObject()
     {
-        if (_arm.childCount < 1)
-        {
-            transform.parent = null;
-            _rigidbody.isKinematic = false;
-            _boxCollider.isTrigger = false;
-            _boxCollider.enabled = true;
-            _rigidbody.AddForce(transform.forward * _speedDropObject);
-        }
+        _rigidbody.isKinematic = false;
+        _boxCollider.enabled = true;
+        _boxCollider.isTrigger = false;
+        _rigidbody.AddForce(transform.forward * _speedDropObject);
+        transform.parent = null;
     }
 }

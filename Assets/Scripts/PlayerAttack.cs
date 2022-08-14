@@ -22,14 +22,20 @@ public class PlayerAttack : MonoBehaviour
             _targetHand.transform.childCount != 0
             )
         {
+            if (_targetHand.gameObject.GetComponentInChildren<BoxCollider>().enabled == false && 
+                !_animator.GetCurrentAnimatorStateInfo(0).IsName(ATTACK1_NAME_ANIMATOR) && 
+                !_animator.GetCurrentAnimatorStateInfo(0).IsName(ATTACK2_NAME_ANIMATOR))
+            {
+                _targetHand.gameObject.GetComponentInChildren<BoxCollider>().enabled = true;
+                Invoke("DisableColliderWeapon", 2);
+            }
+
             if (_targetHand.gameObject.GetComponentInChildren<WeaponStats>().HasTwoHandWeapon())
             {
                 _animator.SetTrigger(ATTACK1_PARAMETER_ANIMATOR);
             }else{
                 _animator.SetTrigger(ATTACK2_PARAMETER_ANIMATOR);
             }
-            _targetHand.gameObject.GetComponentInChildren<BoxCollider>().enabled = true;
-            Invoke("DisableColliderWeapon", 2);
         }
         else if (
             Input.GetKeyDown(KeyCode.Mouse1) && 

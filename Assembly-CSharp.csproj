@@ -60,13 +60,13 @@
     <Compile Include="Assets\Scripts\EnemyStats.cs" />
     <Compile Include="Assets\Scripts\ParameterEnemyStats.cs" />
     <Compile Include="Assets\Scripts\PlayerPickUpObject.cs" />
+    <Compile Include="Assets\Scripts\PowerUpStats.cs" />
+    <Compile Include="Assets\Scripts\EnemyHealthBar.cs" />
     <Compile Include="Assets\Scripts\WeaponStats.cs" />
     <Compile Include="Assets\Scripts\CameraMoveTarget.cs" />
     <Compile Include="Assets\Scripts\PlayerAttack.cs" />
-    <Compile Include="Assets\Scripts\PickUpObject.cs" />
     <Compile Include="Assets\Scripts\EnemyHealth.cs" />
-    <Compile Include="Assets\Scripts\EnemyHealthBar.cs" />
-    <Compile Include="Assets\Scripts\PowerUpStats.cs" />
+    <Compile Include="Assets\Scripts\PickUpObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

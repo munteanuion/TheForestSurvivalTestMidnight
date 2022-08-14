@@ -31,7 +31,7 @@ public class PlayerPickUpObject : MonoBehaviour
             } 
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && _arm.childCount > 0)
         {
             _arm.gameObject.GetComponentInChildren<PickUpObject>().DropDownObject();
         }
