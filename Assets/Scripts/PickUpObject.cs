@@ -3,8 +3,8 @@ using UnityEngine;
 public class PickUpObject : MonoBehaviour
 {
     [SerializeField] private Transform _arm;
-    [SerializeField] private float _speedDropObject = 2;
 
+    private float _speedDropObject = 200;
     private Rigidbody _rigidbody;
     private BoxCollider _boxCollider;
 
