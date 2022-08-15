@@ -5,7 +5,7 @@ public class Inventory : MonoBehaviour
 {
     public bool[] isFull;
     public GameObject[] slotsTargetCanvas;
-    private List<GameObject> gameObjectsInSlots = new List<GameObject>(9);
+    public List<GameObject> gameObjectsInSlots = new List<GameObject>(9);
 
     public void AddPrefabInSlot(GameObject prefab, int index)
     {
