@@ -5,13 +5,11 @@ public class EnemyHealthBar : MonoBehaviour
 {
     [SerializeField] private Image _healthBarFilling;
     [SerializeField] private EnemyHealth _enemyHealth;
-
-    private Camera _camera;
+    [SerializeField] private Transform _targetToLook;
 
     private void Awake()
     {
         _enemyHealth.HealthChanged += OnHealthChanged;
-        _camera = Camera.main;
     }
 
     private void OnDestroy()
@@ -26,9 +24,8 @@ public class EnemyHealthBar : MonoBehaviour
             this.gameObject.SetActive(false);
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
-        transform.LookAt(transform.position);
-        transform.Rotate(0, 0, 0);
+        transform.LookAt(_targetToLook.position);
     }
 }

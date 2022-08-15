@@ -424,6 +424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthBarFilling: {fileID: 5591171214893681308}
   _enemyHealth: {fileID: 7678784735457010616}
+  _targetToLook: {fileID: 8525048019574504404, guid: 41f171e635c3f62498318a27aa579e20, type: 3}
 --- !u!1001 &2426590337832084831
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -6,6 +6,11 @@ public class CaracterMove3D : MonoBehaviour
     [SerializeField] private Transform _playerModel; 
     [SerializeField] private Transform _mainCamera;
     
+    private float _horizontal;
+    private float _vertical;
+    private bool _hasStickCamera;
+    private Vector3 _vector3Empty1;
+    private Vector3 _vector3Empty2;
     private Animator _animator;
     private Rigidbody _rigidbody;
     private PlayerHealth _playerHealth;
@@ -13,6 +18,7 @@ public class CaracterMove3D : MonoBehaviour
 
     private void Awake()
     {
+        _hasStickCamera = _mainCamera.GetComponent<CameraMoveTarget>().HasStickCamera();
         _rigidbody = GetComponent<Rigidbody>();
         _playerHealth = GetComponent<PlayerHealth>();
         _animator = GetComponent<Animator>();
@@ -32,22 +38,24 @@ public class CaracterMove3D : MonoBehaviour
 
     private void MoveRotatePlayer()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-        _animator.SetFloat("HorizontalSpeed", horizontal);
-        _animator.SetFloat("VerticalSpeed", vertical);
+        _horizontal = Input.GetAxis("Horizontal");
+        _vertical = Input.GetAxis("Vertical");
 
-        Vector3 camForward = _mainCamera.forward;
-        Vector3 camRight = _mainCamera.right;
-        camForward.y = 0f;
-        camRight.y = 0f;
+        _animator.SetFloat("HorizontalSpeed", _horizontal);
+        _animator.SetFloat("VerticalSpeed", _vertical);
 
-        Vector3 movingVector = horizontal * camRight.normalized + vertical * camForward.normalized;
+        _vector3Empty1 = _mainCamera.forward;
+        _vector3Empty2 = _mainCamera.right;
 
-        if (!_mainCamera.GetComponent<CameraMoveTarget>().HasStickCamera() && movingVector.magnitude >= 0.2f)
-            _playerModel.rotation = Quaternion.LookRotation(camForward, Vector3.up);
+        _vector3Empty1.y = 0f;
+        _vector3Empty2.y = 0f;
 
-        _rigidbody.MovePosition(transform.position + movingVector * _speed * Time.fixedDeltaTime);
+        _vector3Empty2 = _horizontal * _vector3Empty2.normalized + _vertical * _vector3Empty1.normalized;
+
+        if (!_hasStickCamera && _vector3Empty2.magnitude >= 0.2f)
+            _playerModel.rotation = Quaternion.LookRotation(_vector3Empty1, Vector3.up);
+
+        _rigidbody.MovePosition(transform.position + _vector3Empty2 * _speed * Time.fixedDeltaTime);
 
         if (_rigidbody.velocity.magnitude > _speed)
             _rigidbody.velocity = _rigidbody.velocity.normalized * _speed;

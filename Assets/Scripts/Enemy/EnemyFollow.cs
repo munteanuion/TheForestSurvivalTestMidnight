@@ -15,6 +15,7 @@ public class EnemyFollow : MonoBehaviour
     private float _speedMove;
     private float _rotationSpeed;
     private float _moveDistanceEnemyPlayer;
+    private Vector3 _vector3Empty;
 
     private void Awake()
     {
@@ -62,13 +63,13 @@ public class EnemyFollow : MonoBehaviour
     
     private void RotateToTarget()
     {
-        Vector3 lookVector = _targetFollow.position - _agentTransform.position;
-        lookVector.y = 0;
-        if (lookVector == Vector3.zero) return;
+        _vector3Empty = _targetFollow.position - _agentTransform.position;
+        _vector3Empty.y = 0;
+        if (_vector3Empty == Vector3.zero) return;
         _agentTransform.rotation = Quaternion.RotateTowards
             (
                 _agentTransform.rotation,
-                Quaternion.LookRotation(lookVector, Vector3.up),
+                Quaternion.LookRotation(_vector3Empty, Vector3.up),
                 _rotationSpeed * Time.deltaTime
             );
     }

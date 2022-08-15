@@ -9,6 +9,10 @@ public class CameraMoveTarget : MonoBehaviour
     [SerializeField] private float _mouseSensitivity = 0.8f;
     [SerializeField] private bool _stickCamera;
 
+    private float _aimX;
+    private float _aimY;
+    private Vector3 _vector3Empty;
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -17,23 +21,25 @@ public class CameraMoveTarget : MonoBehaviour
 
     void FixedUpdate()
     {
-        float aimX = Input.GetAxis("Mouse X");
-        float aimY = Input.GetAxis("Mouse Y");
-        _cameraTarget.rotation *= Quaternion.AngleAxis(aimX * _mouseSensitivity, Vector3.up);
-        _cameraTarget.rotation *= Quaternion.AngleAxis(-aimY * _mouseSensitivity, Vector3.right);
+        _aimX = Input.GetAxis("Mouse X");
+        _aimY = Input.GetAxis("Mouse Y");
+
+        _cameraTarget.rotation *= Quaternion.AngleAxis(_aimX * _mouseSensitivity, Vector3.up);
+        _cameraTarget.rotation *= Quaternion.AngleAxis(-_aimY * _mouseSensitivity, Vector3.right);
         
-        var angleX = _cameraTarget.localEulerAngles.x;
+        _aimX = _cameraTarget.localEulerAngles.x;
 
-        if (angleX > 180 && angleX < _maximumAngle)
+        if (_aimX > 180 && _aimX < _maximumAngle)
         {
-            angleX = _maximumAngle;
+            _aimX = _maximumAngle;
         }
-        else if (angleX < 180 && angleX > _minimumAngle)
+        else if (_aimX < 180 && _aimX > _minimumAngle)
         {
-            angleX = _minimumAngle;
+            _aimX = _minimumAngle;
         }
-
-        _cameraTarget.localEulerAngles = new Vector3(angleX, _cameraTarget.localEulerAngles.y, 0);
+        
+        _vector3Empty.Set(_aimX, _cameraTarget.localEulerAngles.y, 0);
+        _cameraTarget.localEulerAngles = _vector3Empty;
 
         if (_stickCamera)
         {

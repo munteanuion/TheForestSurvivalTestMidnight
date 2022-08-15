@@ -55,7 +55,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void DisableColliderWeapon()
     {
-        for(int i = 0; i < _targetHand.transform.childCount; i++)
+        for (int i = 0; i < _targetHand.transform.childCount; i++)
         {
             if (_targetHand.transform.GetChild(i).gameObject.activeSelf)
             {
@@ -63,6 +63,6 @@ public class PlayerAttack : MonoBehaviour
                 break;
             }
         }
-        
+
     }
 }
