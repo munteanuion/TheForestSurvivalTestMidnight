@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class PickUpObject : MonoBehaviour
 {
-    [SerializeField] private Transform _arm;
-
     private float _speedDropObject = 200;
     private Rigidbody _rigidbody;
     private BoxCollider _boxCollider;
@@ -14,17 +12,18 @@ public class PickUpObject : MonoBehaviour
         _boxCollider = GetComponent<BoxCollider>();
     }
 
-    public void PickUp()
+    public void PickUp(Transform _arm, GameObject gameObjectInventory)
     {
-        if(_arm.childCount < 1)
-        {
-            transform.SetParent(_arm);
-            transform.position = _arm.position;
-            transform.rotation = _arm.rotation;
-            _rigidbody.isKinematic = true;
-            _boxCollider.isTrigger = true;
-            _boxCollider.enabled = false;
-        }
+        if(gameObjectInventory != null)
+            if (_arm.childCount > 0 && gameObjectInventory.activeSelf)
+                gameObjectInventory.SetActive(false);
+
+        transform.SetParent(_arm);
+        transform.position = _arm.position;
+        transform.rotation = _arm.rotation;
+        _rigidbody.isKinematic = true;
+        _boxCollider.isTrigger = true;
+        _boxCollider.enabled = false;
     }
 
     public void DropDownObject()

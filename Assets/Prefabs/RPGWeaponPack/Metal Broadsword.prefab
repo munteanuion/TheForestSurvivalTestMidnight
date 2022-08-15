@@ -115,6 +115,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 15
   _twoHandWeapon: 0
+  _inventoryIcon: {fileID: 0}
+  _thisWeaponPrefab: {fileID: 1239049983549144}
 --- !u!114 &1069126860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,8 +129,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 093020c35ba983d46bb5f8699d587e32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _arm: {fileID: 0}
-  _speedDropObject: 2
 --- !u!54 &7267545804087433493
 Rigidbody:
   m_ObjectHideFlags: 0

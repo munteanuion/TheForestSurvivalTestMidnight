@@ -9,8 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4889375790027402}
-  - component: {fileID: 33477124642958556}
-  - component: {fileID: 23225825649005318}
   - component: {fileID: 3468709225932201758}
   - component: {fileID: 662385592}
   - component: {fileID: 662385591}
@@ -38,56 +36,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &33477124642958556
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1160154057661508}
-  m_Mesh: {fileID: 4300000, guid: 1e7ab3302be4c59499bd1659ccd73b35, type: 3}
---- !u!23 &23225825649005318
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1160154057661508}
-  m_Enabled: 0
-  m_CastShadows: 2
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 4294967295
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 416aa3d63d96c524797418e7eb5e423d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &3468709225932201758
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -115,6 +63,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 26
   _twoHandWeapon: 1
+  _inventoryIcon: {fileID: 426157643833767831, guid: 9e56f81ded6fd9243a6977515a5ddfb8, type: 3}
+  _thisWeaponPrefab: {fileID: 1160154057661508}
 --- !u!114 &662385591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,8 +77,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 093020c35ba983d46bb5f8699d587e32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _arm: {fileID: 0}
-  _speedDropObject: 2
 --- !u!54 &1964300214898380511
 Rigidbody:
   m_ObjectHideFlags: 0

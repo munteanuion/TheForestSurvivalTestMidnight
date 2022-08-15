@@ -59,7 +59,7 @@
     <Compile Include="Assets\Scripts\Player\CaracterMove3D.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStats.cs" />
     <Compile Include="Assets\Scripts\Enemy\ParameterEnemyStats.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerPickUpObject.cs" />
+    <Compile Include="Assets\Scripts\Player\Inventory\PlayerPickUpObject.cs" />
     <Compile Include="Assets\Scripts\PowerUpStats.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyHealthBar.cs" />
     <Compile Include="Assets\Scripts\WeaponStats.cs" />
@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerAttack.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\PickUpObject.cs" />
+    <Compile Include="Assets\Scripts\Player\Inventory\Inventory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -55,6 +55,14 @@ public class PlayerAttack : MonoBehaviour
 
     private void DisableColliderWeapon()
     {
-        _targetHand.gameObject.GetComponentInChildren<BoxCollider>().enabled = false;
+        for(int i = 0; i < _targetHand.transform.childCount; i++)
+        {
+            if (_targetHand.transform.GetChild(i).gameObject.activeSelf)
+            {
+                _targetHand.transform.GetChild(i).gameObject.GetComponentInChildren<BoxCollider>().enabled = false;
+                break;
+            }
+        }
+        
     }
 }

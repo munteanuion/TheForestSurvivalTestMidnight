@@ -21,8 +21,7 @@ public class CameraMoveTarget : MonoBehaviour
         float aimY = Input.GetAxis("Mouse Y");
         _cameraTarget.rotation *= Quaternion.AngleAxis(aimX * _mouseSensitivity, Vector3.up);
         _cameraTarget.rotation *= Quaternion.AngleAxis(-aimY * _mouseSensitivity, Vector3.right);
-
-
+        
         var angleX = _cameraTarget.localEulerAngles.x;
 
         if (angleX > 180 && angleX < _maximumAngle)
