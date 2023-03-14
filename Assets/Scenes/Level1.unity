@@ -4156,7 +4156,7 @@ GameObject:
   - component: {fileID: 2087764771}
   m_Layer: 0
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4965,6 +4965,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1924180814712106038, guid: 41f171e635c3f62498318a27aa579e20, type: 3}
+      propertyPath: isFull.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1924180814712106038, guid: 41f171e635c3f62498318a27aa579e20, type: 3}
       propertyPath: isFull.Array.data[7]
       value: 0
       objectReference: {fileID: 0}
@@ -5024,6 +5028,10 @@ PrefabInstance:
       propertyPath: _textE
       value: 
       objectReference: {fileID: 333477649}
+    - target: {fileID: 8525048019574504402, guid: 41f171e635c3f62498318a27aa579e20, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8525048019574504403, guid: 41f171e635c3f62498318a27aa579e20, type: 3}
       propertyPath: m_Name
       value: Player
@@ -5075,6 +5083,10 @@ PrefabInstance:
     - target: {fileID: 8525048019574504407, guid: 41f171e635c3f62498318a27aa579e20, type: 3}
       propertyPath: _runSpeed
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525048019574504407, guid: 41f171e635c3f62498318a27aa579e20, type: 3}
+      propertyPath: _jumpForce
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8525048019574504407, guid: 41f171e635c3f62498318a27aa579e20, type: 3}
       propertyPath: _mainCamera

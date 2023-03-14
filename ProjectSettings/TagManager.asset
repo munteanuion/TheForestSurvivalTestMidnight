@@ -8,6 +8,7 @@ TagManager:
   - HandSpider
   - Undefined
   - PowerUp
+  - Ground
   layers:
   - Default
   - TransparentFX

@@ -6,8 +6,10 @@ public class CaracterMove3D : MonoBehaviour
     [SerializeField] public float _runSpeed = 10f; // Viteza de deplasare cand personajul fuge
     [SerializeField] public float _animSpeed = 1f; // Viteza de animatie a personajului cand merge
     [SerializeField] public float _runAnimSpeed = 2f; // Viteza de animatie a personajului cand fuge
-    [SerializeField] private Transform _playerModel; 
+    [SerializeField] private Transform _playerModel;
     [SerializeField] private Transform _mainCamera;
+    [SerializeField] private float _jumpForce = 10f;
+    [SerializeField] private string _groundTag = "Ground";
 
     private float _defaultAnimSpeed; // Viteza de animatie default a personajului
     private bool _isRunning = false; // Verifica daca personajul fuge sau nu
@@ -20,6 +22,7 @@ public class CaracterMove3D : MonoBehaviour
     private Rigidbody _rigidbody;
     private PlayerHealth _playerHealth;
     private const string ATTACK1_NAME_ANIMATOR = "AttackTwoHand", BLOCK_NAME_ANIMATOR = "Block";
+    private bool _isGrounded = true; // Verifica daca personajul se afla pe sol sau nu
 
     private void Awake()
     {
@@ -33,12 +36,44 @@ public class CaracterMove3D : MonoBehaviour
     private void FixedUpdate()
     {
         if (
-            _playerHealth.GetHealth() > 0 && 
+            _playerHealth.GetHealth() > 0 &&
             !_animator.GetCurrentAnimatorStateInfo(0).IsName(ATTACK1_NAME_ANIMATOR) &&
             !_animator.GetCurrentAnimatorStateInfo(0).IsName(BLOCK_NAME_ANIMATOR)
             )
         {
             MoveRotatePlayer();
+
+            // Verificam daca personajul se afla pe sol si daca a apasat tasta Space
+            if (_isGrounded && Input.GetKeyDown(KeyCode.Space))
+            {
+                _rigidbody.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
+                _isGrounded = false;
+            }
+        }
+    }
+    private void Update()
+    {
+        if (
+            _playerHealth.GetHealth() > 0 &&
+            !_animator.GetCurrentAnimatorStateInfo(0).IsName(ATTACK1_NAME_ANIMATOR) &&
+            !_animator.GetCurrentAnimatorStateInfo(0).IsName(BLOCK_NAME_ANIMATOR)
+            )
+        {
+            RaycastHit hit;
+            if (!_isGrounded && Physics.Raycast(transform.position, Vector3.down, out hit, 0.8f))
+            {
+                if (hit.transform.tag == _groundTag)
+                {
+                    _isGrounded = true;
+                }
+            }
+            if (_isGrounded && Input.GetKeyDown(KeyCode.Space))
+            {
+                _rigidbody.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
+                _isGrounded = false;
+            }
+            
+            
         }
     }
 
@@ -59,7 +94,9 @@ public class CaracterMove3D : MonoBehaviour
         _vector3Empty2 = _horizontal * _vector3Empty2.normalized + _vertical * _vector3Empty1.normalized;
 
         if (!_hasStickCamera && _vector3Empty2.magnitude >= 0.2f)
+        {
             _playerModel.rotation = Quaternion.LookRotation(_vector3Empty1, Vector3.up);
+        }
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
