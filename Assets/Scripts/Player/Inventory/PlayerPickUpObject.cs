@@ -80,12 +80,6 @@ public class PlayerPickUpObject : MonoBehaviour
         ChangeObjectHelpMethod(Input.GetKeyDown(KeyCode.Alpha1), 0);
         ChangeObjectHelpMethod(Input.GetKeyDown(KeyCode.Alpha2), 1);
         ChangeObjectHelpMethod(Input.GetKeyDown(KeyCode.Alpha3), 2);
-        ChangeObjectHelpMethod(Input.GetKeyDown(KeyCode.Alpha4), 3);
-        ChangeObjectHelpMethod(Input.GetKeyDown(KeyCode.Alpha5), 4);
-        ChangeObjectHelpMethod(Input.GetKeyDown(KeyCode.Alpha6), 5);
-        ChangeObjectHelpMethod(Input.GetKeyDown(KeyCode.Alpha7), 6);
-        ChangeObjectHelpMethod(Input.GetKeyDown(KeyCode.Alpha8), 7);
-        ChangeObjectHelpMethod(Input.GetKeyDown(KeyCode.Alpha9), 8);
     }
 
     private void ChangeObjectHelpMethod(bool isTrue,int index) 
@@ -98,6 +92,12 @@ public class PlayerPickUpObject : MonoBehaviour
 
             _inventory.GetPrefabByIndex(index).SetActive(true);
             _indexObjectInHand = index;
+
+            for (int i = 0; i < _inventory.GetLenghtGameObjectsInSlots(); i++)
+            {
+                _inventory.GetPrefabByIndex(i).GetComponent<PickUpObject>().isPicked = false;
+            }
+            _inventory.GetPrefabByIndex(index).GetComponent<PickUpObject>().isPicked = true;
         }
     }
 }

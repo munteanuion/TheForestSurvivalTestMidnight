@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PickUpObject : MonoBehaviour
 {
+    public bool isPicked = false;
     private float _speedDropObject = 200;
     private Rigidbody _rigidbody;
     private BoxCollider _boxCollider;
@@ -24,10 +25,12 @@ public class PickUpObject : MonoBehaviour
         _rigidbody.isKinematic = true;
         _boxCollider.isTrigger = true;
         _boxCollider.enabled = false;
+        isPicked = true;
     }
 
     public void DropDownObject()
     {
+        isPicked = false;
         _rigidbody.isKinematic = false;
         _boxCollider.enabled = true;
         _boxCollider.isTrigger = false;

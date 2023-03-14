@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class CaracterMove3D : MonoBehaviour
@@ -21,8 +22,9 @@ public class CaracterMove3D : MonoBehaviour
     private Animator _animator;
     private Rigidbody _rigidbody;
     private PlayerHealth _playerHealth;
-    private const string ATTACK1_NAME_ANIMATOR = "AttackTwoHand", BLOCK_NAME_ANIMATOR = "Block";
+    private const string ATTACK1_NAME_ANIMATOR = "AttackTwoHand", BLOCK_NAME_ANIMATOR = "Block", JUMP_WHILE_RUNNING = "JumpWhileRunning";
     private bool _isGrounded = true; // Verifica daca personajul se afla pe sol sau nu
+    private bool _canCheckIsGrounded = true; 
 
     private void Awake()
     {
@@ -38,17 +40,13 @@ public class CaracterMove3D : MonoBehaviour
         if (
             _playerHealth.GetHealth() > 0 &&
             !_animator.GetCurrentAnimatorStateInfo(0).IsName(ATTACK1_NAME_ANIMATOR) &&
-            !_animator.GetCurrentAnimatorStateInfo(0).IsName(BLOCK_NAME_ANIMATOR)
-            )
+            !_animator.GetCurrentAnimatorStateInfo(0).IsName(BLOCK_NAME_ANIMATOR))
         {
             MoveRotatePlayer();
-
-            // Verificam daca personajul se afla pe sol si daca a apasat tasta Space
-            if (_isGrounded && Input.GetKeyDown(KeyCode.Space))
-            {
-                _rigidbody.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
-                _isGrounded = false;
-            }
+        }
+        else
+        {
+            //MoveRotatePlayer(false);
         }
     }
     private void Update()
@@ -60,7 +58,7 @@ public class CaracterMove3D : MonoBehaviour
             )
         {
             RaycastHit hit;
-            if (!_isGrounded && Physics.Raycast(transform.position, Vector3.down, out hit, 0.8f))
+            if (_canCheckIsGrounded && !_isGrounded && Physics.Raycast(transform.position, Vector3.down, out hit, 0.9f))
             {
                 if (hit.transform.tag == _groundTag)
                 {
@@ -70,17 +68,32 @@ public class CaracterMove3D : MonoBehaviour
             if (_isGrounded && Input.GetKeyDown(KeyCode.Space))
             {
                 _rigidbody.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
+                _animator.Play(JUMP_WHILE_RUNNING);
                 _isGrounded = false;
+                _canCheckIsGrounded = false;
+                StartCoroutine(SetTrueCanGroundCheck());
             }
-            
-            
         }
     }
 
-    private void MoveRotatePlayer()
+    private IEnumerator SetTrueCanGroundCheck()
     {
-        _horizontal = Input.GetAxis("Horizontal");
-        _vertical = Input.GetAxis("Vertical");
+        yield return new WaitForSeconds(1f);
+        _canCheckIsGrounded = true;
+    }
+
+    private void MoveRotatePlayer(bool movePlayer = true)
+    {
+        if (movePlayer)
+        {
+            _horizontal = Input.GetAxis("Horizontal");
+            _vertical = Input.GetAxis("Vertical");
+        }
+        else
+        {
+            _horizontal = 0;
+            _vertical = 0;
+        }
 
         _animator.SetFloat("HorizontalSpeed", _horizontal);
         _animator.SetFloat("VerticalSpeed", _vertical);
