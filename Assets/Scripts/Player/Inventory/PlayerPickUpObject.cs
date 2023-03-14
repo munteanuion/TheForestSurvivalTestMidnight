@@ -21,7 +21,7 @@ public class PlayerPickUpObject : MonoBehaviour
         _inventory = GetComponent<Inventory>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (_textE.activeSelf)
         {
