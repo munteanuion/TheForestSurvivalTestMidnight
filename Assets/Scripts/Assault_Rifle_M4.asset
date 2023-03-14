@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e892e6fae4a9574e81d1d17447c09d0, type: 3}
+  m_Name: Assault_Rifle_M4
+  m_EditorClassIdentifier: 
+  weaponName: Assault_Rifle_M4
+  _damage: 5
+  _twoHandWeapon: 0
+  _inventoryIcon: {fileID: 426157643833767831, guid: ffefc23ab7f797c4f8a185893950168f, type: 3}
+  _thisWeaponPrefab: {fileID: 3960879644723491920, guid: 9c32f2e3b18a3a94fa0cb90a4ac1c2fd, type: 3}

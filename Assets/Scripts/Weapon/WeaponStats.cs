@@ -2,28 +2,25 @@ using UnityEngine;
 
 public class WeaponStats : MonoBehaviour
 {
-    [SerializeField] private float _damage = 5;
-    [SerializeField] private bool _twoHandWeapon;
-    [SerializeField] private GameObject _inventoryIcon;
-    [SerializeField] private GameObject _thisWeaponPrefab;
+    [SerializeField] private WeaponStat _WeaponStats;
 
     public float GetDamage()
     {
-        return _damage;
+        return _WeaponStats.GetDamage();
     }
 
     public GameObject GetInventoryIconPrefab()
     {
-        return _inventoryIcon;
+        return _WeaponStats.GetInventoryIconPrefab();
     }
 
     public bool HasTwoHandWeapon()
     {
-        return _twoHandWeapon;
+        return _WeaponStats.GetPrefab();
     }
 
     public GameObject GetPrefab()
     {
-        return _thisWeaponPrefab;
+        return _WeaponStats.GetPrefab();
     }
 }

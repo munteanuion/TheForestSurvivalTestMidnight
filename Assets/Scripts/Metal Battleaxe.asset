@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e892e6fae4a9574e81d1d17447c09d0, type: 3}
+  m_Name: Metal Battleaxe
+  m_EditorClassIdentifier: 
+  weaponName: Metal Battleaxe
+  _damage: 20
+  _twoHandWeapon: 0
+  _inventoryIcon: {fileID: 426157643833767831, guid: 9e56f81ded6fd9243a6977515a5ddfb8, type: 3}
+  _thisWeaponPrefab: {fileID: 1160154057661508, guid: e9f59d77b57d68e4199b7d15367aaa7c, type: 3}

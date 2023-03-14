@@ -49,10 +49,12 @@ public class PlayerHealth : MonoBehaviour
 
     private void Death()
     {
+        
         HealthChanged?.Invoke(0);
         _playerAnimator.SetTrigger(DEATH_PARAMETER_ANIMATOR);
         this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
         this.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        PlayerData.Instance.Lose();
     }
 
     public int GetHealth()

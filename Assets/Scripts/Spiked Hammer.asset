@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e892e6fae4a9574e81d1d17447c09d0, type: 3}
+  m_Name: Spiked Hammer
+  m_EditorClassIdentifier: 
+  weaponName: Spiked Hammer
+  _damage: 15
+  _twoHandWeapon: 1
+  _inventoryIcon: {fileID: 3017542221147965987, guid: 44b34013ccb92fd4abc257a05d70156f, type: 3}
+  _thisWeaponPrefab: {fileID: 1990868044218892, guid: f7a64625aeaefad4093bd85bb5fb491f, type: 3}

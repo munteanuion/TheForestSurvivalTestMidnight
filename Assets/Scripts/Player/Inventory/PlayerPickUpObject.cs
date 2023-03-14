@@ -95,9 +95,11 @@ public class PlayerPickUpObject : MonoBehaviour
 
             for (int i = 0; i < _inventory.GetLenghtGameObjectsInSlots(); i++)
             {
-                _inventory.GetPrefabByIndex(i).GetComponent<PickUpObject>().isPicked = false;
+                if(_inventory.GetPrefabByIndex(i) != null)
+                    _inventory.GetPrefabByIndex(i).GetComponent<PickUpObject>().isPicked = false;
             }
-            _inventory.GetPrefabByIndex(index).GetComponent<PickUpObject>().isPicked = true;
+            if (_inventory.GetPrefabByIndex(index) != null)
+                _inventory.GetPrefabByIndex(index).GetComponent<PickUpObject>().isPicked = true;
         }
     }
 }

@@ -8,6 +8,9 @@ public class PlayerAttack : MonoBehaviour
     private const string ATTACK1_NAME_ANIMATOR = "AttackTwoHand", ATTACK1_PARAMETER_ANIMATOR = "AttackTwoHand";
     private const string ATTACK2_NAME_ANIMATOR = "AttackOneHand", ATTACK2_PARAMETER_ANIMATOR = "AttackOneHand";
     private const string BLOCK_NAME_ANIMATOR = "Block", BLOCK_PARAMETER_ANIMATOR = "Block";
+    private const string GUN_ATTACK_NAME_ANIMATION = "GunAttack";
+
+    private bool isActiveGunWeapon = false;
 
     private void Awake()
     {
@@ -16,8 +19,18 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
+        if (_targetHand.GetComponentInChildren<Shooting>() != null)
+        {
+            isActiveGunWeapon = _targetHand.GetComponentInChildren<Shooting>().gameObject.activeSelf;
+        }
+        else
+        {
+            isActiveGunWeapon = false;
+        }
+
         if (
-            Input.GetKeyDown(KeyCode.Mouse0) && 
+            Input.GetKeyDown(KeyCode.Mouse0) &&
+            !isActiveGunWeapon &&
             !_animator.GetCurrentAnimatorStateInfo(0).IsName(ATTACK1_NAME_ANIMATOR) &&
             _targetHand.transform.childCount != 0
             )
@@ -50,7 +63,11 @@ public class PlayerAttack : MonoBehaviour
             )
         {
             _animator.SetBool(BLOCK_PARAMETER_ANIMATOR, false);
-        }  
+        }
+        else if (isActiveGunWeapon)
+        {
+            //_animator.Play(GUN_ATTACK_NAME_ANIMATION);
+        }
     }
 
     private void DisableColliderWeapon()
